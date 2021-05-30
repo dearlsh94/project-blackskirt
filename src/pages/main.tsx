@@ -1,17 +1,11 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
+import Introduce from 'components/main/introduce';
+import Title from 'components/main/title';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100vw",
-    height: "100vh",
-    backgroundColor: 'black',
-    textAlign: 'center',
-  },
-  title: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: '125%',
+    backgroundColor: 'black'
   }
 }));
 
@@ -20,9 +14,7 @@ const Main = () => {
 
   return (
    <div className={classes.root}>
-      <div className={classes.title}>
-        BlackSkirtly Radio
-      </div>
+      <Title/>
    </div> 
   )
 }
