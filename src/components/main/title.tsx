@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 'bold',
     fontSize: '30px',
     color: 'white',
+    
     '@media (min-width:786px)': {
       fontSize: '60px',
     }
