@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 const Title = () => {
   const classes = useStyles();
 
-  return (
+  return ( 
     <div className={classes.root}>
       <div className={classes.backgroundWrapper}>
         <img src='/assets/images/cali.jpeg' alt='black-skirtly-background-cali'/>

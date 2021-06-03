@@ -14,39 +14,48 @@ const useStyles = makeStyles(theme => ({
 const Main = () => {
   const classes = useStyles();
   let y = 0;
-  
-  const handleNavigation = (e: any) => {
-    var elId = '';
-    
-    if (y < window.scrollY && 400 < window.scrollY) {
-      elId = 'introduceSection';
+  let didScroll = false;
+
+  window.addEventListener("scroll", (e) => didScroll = true);
+
+  setInterval(() => {
+    if (didScroll) {
+      moveNavigation();
+      didScroll = false;
     }
+  }, 250);
+
+  const moveNavigation = () => {
+    var elId = '';
+
     if (window.scrollY < y && window.scrollY < 400) {
       elId = 'titleSection';
     }
-    
+    if (y < window.scrollY && 400 < window.scrollY) {
+      elId = 'introduceSection';
+    }
+
     if (elId !== '') {
       var elTop = document.getElementById(elId)?.offsetTop;
       window.scrollTo({
-        top: elTop, 
-        // behavior: 'smooth'
+        top: elTop,
+        behavior: 'smooth'
       });
     }
-    
+
     y = window.scrollY;
-  };
-  window.addEventListener("scroll", (e) => handleNavigation(e));
+  }
 
   return (
-   <div className={classes.root}>
+    <div className={classes.root}>
       <section id='titleSection'>
-        <Title/>
+        <Title />
       </section>
-      <DivideZone/>
+      <DivideZone />
       <section id='introduceSection'>
-        <Introduce/>
+        <Introduce />
       </section>
-   </div> 
+    </div>
   )
 }
 
