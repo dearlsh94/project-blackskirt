@@ -36,6 +36,9 @@ const useStyles = makeStyles(theme => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'space-around'
+  },
+  tab: {
+    cursor: 'pointer'
   }
 }));
 
@@ -53,7 +56,7 @@ const BlackAppBar = (props: Props) => {
         <Toolbar className={classes.toolbar}>
           {
             tl.map((tab: ITab) => {
-              return <span>
+              return <span className={classes.tab} key={tab.key}>
                 <h2>{tab.name}1</h2>
               </span>
             })

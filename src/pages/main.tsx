@@ -13,20 +13,25 @@ const useStyles = makeStyles(theme => ({
     overflowY: 'hidden'
   },
   body: {
-    width: '80vw',
-    alignItems: 'cneter'
-  },
-  section: {
     width: '100vw',
-    height: '100vh',
-    scrollSnapAlign: 'start',
-    overflowY: 'hidden',
     '& h1, h2, h3, h4, h5, h6': {
       color: 'white'
     },
     '& span': {
       color: 'white'
     }
+  },
+  section: {
+    height: '100vh',
+    overflowY: 'hidden',
+    textAlign: 'center',
+  },
+  subSection: {
+    height: '30vh',
+    paddingTop: '3vh',
+    paddingBottom: '3vh',
+    overflowY: 'hidden',
+    textAlign: 'center'
   }
 }));
 
@@ -40,18 +45,20 @@ const Main = () => {
           <div/>
         </BlackAppBar>
       </header>
-      <body className={classes.body}>
+      <div className={classes.body}>
         <section id='titleSection' className={classes.section}>
           <Title />
         </section>
         <DivideZone />
         <section id='introduceSection' className={classes.section}>
-          <Introduce />
+          <div className={classes.subSection}>
+            <Introduce />
+          </div>
+          <div className={classes.subSection}>
+            <Outlink />
+          </div>
         </section>
-        <section id='outlinkSection' className={classes.section}>
-          <Outlink />
-        </section>
-      </body>
+      </div>
     </div>
   )
 }
